@@ -1,101 +1,100 @@
 # PROJETO-INTEGRADOR
- Este é um projeto integrador desenvolvido por nossa equipe como parte do curso técnico em Desenvolvimento de Sistemas na ETE. O objetivo é criar um sistema completo, com front-end, back-end e banco de dados, aplicando os conceitos aprendidos durante o curso.
 
- 📌 Sistema de Agendamentos
+Este é um projeto integrador desenvolvido por nossa equipe como parte do curso técnico em Desenvolvimento de Sistemas na ETE. O objetivo é criar um sistema completo, com front-end, back-end e banco de dados, aplicando os conceitos aprendidos durante o curso.
 
-Este é um sistema simples de agendamentos desenvolvido com Java (Spring Boot) no back-end e MySQL como banco de dados. O objetivo é criar um sistema funcional que permita o cadastro de usuários e o agendamento de compromissos.
+## 📌 Sistema de Agendamentos
 
-🚀 Tecnologias Utilizadas
+Este é um sistema simples de agendamentos desenvolvido com **PHP** no back-end e **MySQL** como banco de dados. O objetivo é criar um sistema funcional que permita o cadastro de usuários e o agendamento de compromissos.
 
-Java 17
+## 🚀 Tecnologias Utilizadas
 
-Spring Boot
+- **PHP 8**
+- **MySQL**
+- **Apache ou Nginx**
+- **Postman (para testes de API)**
 
-Spring Data JPA
+## 📂 Estrutura do Projeto
 
-MySQL
-
-Postman (para testes de API)
-
-📂 Estrutura do Projeto
-
+```
 /seu-projeto
-│-- src/
-│   ├── main/
-│   │   ├── java/com/seuapp/
-│   │   │   ├── controllers/
-│   │   │   ├── models/
-│   │   │   ├── repositories/
-│   │   │   ├── services/
-│   ├── resources/
-│   │   ├── application.properties
-│-- pom.xml (dependências do Maven)
+│-- frontend/
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│
+│-- backend/
+│   ├── config/
+│   │   ├── database.php
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── index.php
+│
+│-- database/
+│   ├── script.sql
+│
 │-- README.md
+```
 
-🛠️ Como Rodar o Projeto
+## 🛠️ Como Rodar o Projeto
 
-Clone o repositório:
-
+1️⃣ **Clone o repositório:**
+```bash
 git clone https://github.com/seu-usuario/seu-repositorio.git
+```
 
-Entre no diretório do projeto:
-
+2️⃣ **Entre no diretório do projeto:**
+```bash
 cd seu-repositorio
+```
 
-Configure o banco de dados MySQL:
+3️⃣ **Configure o banco de dados MySQL:**
+- Crie um banco de dados chamado `sistema_agendamento`
+- Execute o script SQL localizado na pasta `database/`
 
-Crie um banco de dados chamado seu_banco
+4️⃣ **Configure o servidor PHP:**
+- Se estiver usando XAMPP, coloque os arquivos do `backend/` dentro da pasta `htdocs/`
+- Se estiver usando outro servidor, configure o Virtual Host corretamente
 
-Configure application.properties com as credenciais do banco
+5️⃣ **Acesse o sistema pelo navegador:**
+```bash
+http://localhost/seu-projeto/frontend/
+```
 
-Execute o projeto:
+## 📌 Endpoints da API
 
-mvn spring-boot:run
+### Usuários
+- **POST /usuarios** → Cadastra um usuário
+- **GET /usuarios** → Lista todos os usuários
+- **PUT /usuarios/{id}** → Atualiza um usuário
+- **DELETE /usuarios/{id}** → Remove um usuário
 
-Teste os endpoints no Postman ou navegador:
+### Agendamentos
+- **POST /agendamentos** → Cadastra um agendamento
+- **GET /agendamentos** → Lista todos os agendamentos
+- **PUT /agendamentos/{id}** → Atualiza um agendamento
+- **DELETE /agendamentos/{id}** → Remove um agendamento
 
-GET http://localhost:8080/usuarios
+## 📌 Contribuição
 
-POST http://localhost:8080/agendamentos
+1️⃣ **Fork este repositório**
+2️⃣ **Crie uma branch para sua feature:**
+```bash
+git checkout -b minha-feature
+```
+3️⃣ **Faça commit das mudanças:**
+```bash
+git commit -m 'Adiciona minha feature'
+```
+4️⃣ **Envie para o GitHub:**
+```bash
+git push origin minha-feature
+```
+5️⃣ **Abra um Pull Request**
 
-📌 Endpoints da API
-
-Usuários
-
-POST /usuarios → Cadastra um usuário
-
-GET /usuarios → Lista todos os usuários
-
-PUT /usuarios/{id} → Atualiza um usuário
-
-DELETE /usuarios/{id} → Remove um usuário
-
-Agendamentos
-
-POST /agendamentos → Cadastra um agendamento
-
-GET /agendamentos → Lista todos os agendamentos
-
-PUT /agendamentos/{id} → Atualiza um agendamento
-
-DELETE /agendamentos/{id} → Remove um agendamento
-
-📌 Contribuição
-
-Fork este repositório
-
-Crie uma branch para sua feature: git checkout -b minha-feature
-
-Faça commit das mudanças: git commit -m 'Adiciona minha feature'
-
-Envie para o GitHub: git push origin minha-feature
-
-Abra um Pull Request
-
-📝 Licença
+## 📝 Licença
 
 Este projeto está sob a licença MIT. Sinta-se livre para usá-lo e modificá-lo!
 
-💡 Dúvidas? Entre em contato!
-
-📧 Email: etecicerodiasds@gmail.com
+## 💡 Dúvidas? Entre em contato!
+📧 **Email:** etecicerodiasds@gmail.com
