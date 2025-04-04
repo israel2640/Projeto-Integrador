@@ -1,100 +1,120 @@
-# PROJETO-INTEGRADOR
+# 📅 Sistema de Agendamentos - Projeto Integrador
 
-Este é um projeto integrador desenvolvido por nossa equipe como parte do curso técnico em Desenvolvimento de Sistemas na ETE. O objetivo é criar um sistema completo, com front-end, back-end e banco de dados, aplicando os conceitos aprendidos durante o curso.
+Este é o Projeto Integrador desenvolvido por nossa equipe como parte do curso técnico em **Desenvolvimento de Sistemas** na **ETE Cícero Dias**. O objetivo é criar um sistema completo com **front-end**, **back-end** e **banco de dados**, aplicando os conhecimentos adquiridos durante o curso.
 
-## 📌 Sistema de Agendamentos
+---
 
-Este é um sistema simples de agendamentos desenvolvido com **PHP** no back-end e **MySQL** como banco de dados. O objetivo é criar um sistema funcional que permita o cadastro de usuários e o agendamento de compromissos.
+## 📌 Descrição do Projeto
+
+Um sistema simples de agendamentos onde é possível:
+
+- Criar um agendamento
+- Listar todos os agendamentos
+- Editar agendamentos
+- Cancelar agendamentos
+
+Tudo integrado entre o front-end e o back-end.
+
+---
 
 ## 🚀 Tecnologias Utilizadas
 
-- **PHP 8**
-- **MySQL**
-- **Apache ou Nginx**
-- **Postman (para testes de API)**
+### 🖥️ Front-end
+- HTML5
+- CSS3
+- JavaScript
+
+### 🔙 Back-end
+- PHP (versão do WampServer64)
+- MySQL
+- phpMyAdmin
+- Postman (para testes de API)
+
+---
 
 ## 📂 Estrutura do Projeto
 
-```
-/seu-projeto
-│-- frontend/
-│   ├── index.html
-│   ├── style.css
-│   ├── script.js
-│
-│-- backend/
-│   ├── config/
-│   │   ├── database.php
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── index.php
-│
-│-- database/
-│   ├── script.sql
-│
-│-- README.md
-```
+/sistema_agendamento │ ├── front-end/ │ ├── index.html │ ├── style.css │ └── script.js │ ├── api/ │ ├── criar.php │ ├── listar.php │ ├── editar.php │ └── cancelar.php │ ├── config/ │ └── database.php │ └── README.md
 
-## 🛠️ Como Rodar o Projeto
+---
 
-1️⃣ **Clone o repositório:**
+## 🛠️ Como Rodar o Projeto Localmente
+
+### 1. Clonar o repositório
 ```bash
 git clone https://github.com/seu-usuario/seu-repositorio.git
-```
 
-2️⃣ **Entre no diretório do projeto:**
-```bash
-cd seu-repositorio
-```
+2. Abrir com o WampServer64
+Coloque a pasta sistema_agendamento em:
+C:\wamp64\www\
+Inicie o WampServer
 
-3️⃣ **Configure o banco de dados MySQL:**
-- Crie um banco de dados chamado `sistema_agendamento`
-- Execute o script SQL localizado na pasta `database/`
+3. Configurar o Banco de Dados
+Acesse o phpMyAdmin: http://localhost/phpmyadmin
 
-4️⃣ **Configure o servidor PHP:**
-- Se estiver usando XAMPP, coloque os arquivos do `backend/` dentro da pasta `htdocs/`
-- Se estiver usando outro servidor, configure o Virtual Host corretamente
+Crie um banco de dados chamado sistema_agendamento
 
-5️⃣ **Acesse o sistema pelo navegador:**
-```bash
-http://localhost/seu-projeto/frontend/
-```
+Execute o SQL abaixo:
+CREATE TABLE agendamentos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    data DATETIME NOT NULL
+);
 
-## 📌 Endpoints da API
+4. Acessar no Navegador
+Abra:
+http://localhost/sistema_agendamento/front-end/index.html
 
-### Usuários
-- **POST /usuarios** → Cadastra um usuário
-- **GET /usuarios** → Lista todos os usuários
-- **PUT /usuarios/{id}** → Atualiza um usuário
-- **DELETE /usuarios/{id}** → Remove um usuário
+🧪 Testes de API (com Postman)
+Criar Agendamento
+POST http://localhost/sistema_agendamento/api/criar.php
 
-### Agendamentos
-- **POST /agendamentos** → Cadastra um agendamento
-- **GET /agendamentos** → Lista todos os agendamentos
-- **PUT /agendamentos/{id}** → Atualiza um agendamento
-- **DELETE /agendamentos/{id}** → Remove um agendamento
+Body (JSON):
 
-## 📌 Contribuição
 
-1️⃣ **Fork este repositório**
-2️⃣ **Crie uma branch para sua feature:**
-```bash
-git checkout -b minha-feature
-```
-3️⃣ **Faça commit das mudanças:**
-```bash
-git commit -m 'Adiciona minha feature'
-```
-4️⃣ **Envie para o GitHub:**
-```bash
-git push origin minha-feature
-```
-5️⃣ **Abra um Pull Request**
+{
+  "nome": "João Silva",
+  "data": "2025-04-05 14:00:00"
+}
+Listar Agendamentos
+GET http://localhost/sistema_agendamento/api/listar.php
 
-## 📝 Licença
+Editar Agendamento
+POST http://localhost/sistema_agendamento/api/editar.php
 
-Este projeto está sob a licença MIT. Sinta-se livre para usá-lo e modificá-lo!
+Body (JSON):
 
-## 💡 Dúvidas? Entre em contato!
-📧 **Email:** etecicerodiasds@gmail.com
+{
+  "id": 1,
+  "nome": "João Atualizado",
+  "data": "2025-04-05 15:00:00"
+}
+Cancelar Agendamento
+POST http://localhost/sistema_agendamento/api/cancelar.php
+
+Body (JSON):
+
+{
+  "id": 1
+}
+📌 Próximos Passos
+✅ Publicar no GitHub Pages (front-end)
+
+⏳ Criar uma versão com Java + Spring Boot
+
+⏳ Adicionar autenticação (login)
+
+🤝 Contribuição
+Faça um fork do repositório
+
+Crie sua branch: git checkout -b minha-feature
+
+Commit: git commit -m 'Adiciona minha feature'
+
+Push: git push origin minha-feature
+
+Abra um Pull Request
+
+📝 Licença
+Este projeto está sob a licença MIT. Sinta-se livre para usar, estudar e melhorar!
+Email: etecicerodiasds@gmail.com
