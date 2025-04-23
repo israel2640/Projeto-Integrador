@@ -1,33 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Agendamento</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Agendamento</title>
+  <link rel="stylesheet" href="style.css" />
+
 </head>
+
 <body>
+  <button class="toggle-theme" onclick="alternarModo()">🌙 Modo Escuro</button>
+  <h1>Administrador</h1>
+  <h2>Agendar Novo Horário</h2>
+  <form id="form-agendamento">
+    <div>
+      <label for="nome">Nome:</label><br />
+      <input type="text" id="nome" placeholder="Nome" required />
+    </div>
+    <br />
+    <div>
+      <label for="data">Data e Hora:</label><br />
+      <input type="datetime-local" id="data" required />
+    </div>
+    <br />
+    <button type="submit">Agendar</button>
+  </form>
+  
+  <h2>Agendamentos</h2>
 
-    <h2>Agendar Novo Horário</h2>
-    <form id="form-agendamento">
-        <input type="text" id="nome" placeholder="Nome" required>
-        <input type="datetime-local" id="data" required>
-        <button type="submit">Agendar</button>
-    </form>
+  <!-- Campo de busca com ícones e CSS puro -->
+  <div class="search-container">
+    <svg class="icon search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1010.5 18a7.5 7.5 0 006.15-3.35z" stroke="currentColor" stroke-width="2"
+        fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
 
-    <h2>Agendamentos</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Data</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody id="lista-agendamentos"></tbody>
-    </table>
+    <input type="text" id="busca" placeholder="Buscar por nome ou data..." oninput="filtrarAgendamentos()" />
 
-    <script src="script.js"></script>
+    <button class="clear-button" onclick="limparBusca()">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Data</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="lista-agendamentos"></tbody>
+  </table>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
