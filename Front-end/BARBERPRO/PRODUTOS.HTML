@@ -20,12 +20,11 @@
       gap: 20px;
     }
     .product {
-      background-color: #222;
-      border: 2px solid #FFA500;
+      
       border-radius: 15px;
       overflow: hidden;
-      width: 180px;
-      box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+      width: 280px;
+      filter: drop-shadow(1px 1px 20px orange)
       transition: transform 0.3s;
     }
     .product img {
@@ -34,21 +33,35 @@
     }
     .product:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(255, 165, 0, 0.7);
+      filter: drop-shadow(1px 1px 20px orange)
+
     }
+
+    
+fadeInLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.fadeInLeft {
+  animation: fadeInLeft 1s ease forwards;
+}
+
+
+  
   </style>
 </head>
 <body>
 
 <div class="product-gallery">
   <div class="product">
-    <img src="IMAGENS/47ceba999b5f14f530d483f04a8f84bf--cheap-haircuts-barbershop-ideas.jpg" alt="Produto 1">
+    <img src="IMAGENS/produto 1.png" alt="Produto 1">
   </div>
   <div class="product">
-    <img src="IMAGENS/47ceba999b5f14f530d483f04a8f84bf--cheap-haircuts-barbershop-ideas.jpg" alt="Produto 2">
+    <img src="IMAGENS/produto 2.png" alt="Produto 2">
   </div>
   <div class="product">
-    <img src="https://via.placeholder.com/180x200/FFA500/111111?text=Produto+3" alt="Produto 3">
+    <img src="IMAGENS/produto 3" alt="Produto 3">
   </div>
 </div>
 
