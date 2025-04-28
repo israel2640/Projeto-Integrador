@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login BarberPro</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #111;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    video#video-bg {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #FFA500;
+      margin-bottom: 10px;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .btn {
+      background-color: #FFA500;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .footer-text {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .footer-text a {
+      color: #FFA500;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Vídeo de fundo -->
+  <video autoplay muted loop id="video-bg">
+    <source src="IMAGENS/2319-157183741_tiny.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo HTML5.
+  </video>
+
+  <!-- Tela de Login -->
+  <div class="container" id="login-box">
+    <h2>Bem-vindo de volta</h2>
+    <p>Faça login para acessar sua conta</p>
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" placeholder="seu@email.com">
+    </div>
+    <div class="input-group">
+      <label>Senha</label>
+      <input type="password" placeholder="********">
+    </div>
+    <button class="btn">Entrar</button>
+    <div class="footer-text">
+      Não tem uma conta? <a onclick="showRegister()">Registre-se</a>
+    </div>
+  </div>
+
+  <!-- Tela de Registro -->
+  <div class="container hidden" id="register-box">
+    <h2>Criar conta</h2>
+    <p>Preencha os dados para se registrar</p>
+    <div class="input-group">
+      <label>Nome</label>
+      <input type="text" placeholder="Seu nome">
+    </div>
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" placeholder="seu@email.com">
+    </div>
+    <div class="input-group">
+      <label>Senha</label>
+      <input type="password" placeholder="Crie uma senha">
+    </div>
+    <button class="btn">Registrar</button>
+    <div class="footer-text">
+      Já tem uma conta? <a onclick="showLogin()">Fazer login</a>
+    </div>
+  </div>
+
+  <script>
+    function showRegister() {
+      document.getElementById('login-box').classList.add('hidden');
+      document.getElementById('register-box').classList.remove('hidden');
+    }
+
+    function showLogin() {
+      document.getElementById('register-box').classList.add('hidden');
+      document.getElementById('login-box').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
