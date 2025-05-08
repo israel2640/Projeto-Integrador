@@ -1,54 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BarberPro - Início</title>
-  
+
     <!-- Ícones FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  
+
     <!-- SEU CSS NORMAL -->
     <style>
       /* Seu CSS normal que já está */
       /* ... */
     </style>
-  
+
     <!-- AQUI COLA o CSS das animações -->
     <style>
       @keyframes fadeIn {
-        0% { opacity: 0; transform: translateY(20px); }
-        100% { opacity: 1; transform: translateY(0); }
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
+
       @keyframes slideUp {
-        0% { transform: translateY(100px); opacity: 0; }
-        100% { transform: translateY(0); opacity: 1; }
+        0% {
+          transform: translateY(100px);
+          opacity: 0;
+        }
+
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
       }
+
       @keyframes zoomIn {
-        0% { transform: scale(0.8); opacity: 0; }
-        100% { transform: scale(1); opacity: 1; }
+        0% {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
       }
+
       @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-        40% {transform: translateY(-10px);}
-        60% {transform: translateY(-5px);}
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+
+        40% {
+          transform: translateY(-10px);
+        }
+
+        60% {
+          transform: translateY(-5px);
+        }
       }
-  
+
       /* Aplicação nas partes do site */
-      nav { animation: fadeIn 1s ease-out forwards; }
-      h1 { animation: zoomIn 1s ease-out forwards; }
-      h2 { animation: slideUp 1.2s ease-out forwards; }
-      p { animation: fadeIn 1.5s ease-out forwards; }
-      .btn { animation: zoomIn 1.5s ease-out forwards; transition: all 0.3s ease; }
-      .btn:hover { animation: bounce 0.6s; background-color: #e69500; }
-      iframe { animation: zoomIn 1.5s ease-out forwards; }
-      footer { animation: fadeIn 2s ease-out forwards; }
+      nav {
+        animation: fadeIn 1s ease-out forwards;
+      }
+
+      h1 {
+        animation: zoomIn 1s ease-out forwards;
+      }
+
+      h2 {
+        animation: slideUp 1.2s ease-out forwards;
+      }
+
+      p {
+        animation: fadeIn 1.5s ease-out forwards;
+      }
+
+      .btn {
+        animation: zoomIn 1.5s ease-out forwards;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        animation: bounce 0.6s;
+        background-color: #e69500;
+      }
+
+      iframe {
+        animation: zoomIn 1.5s ease-out forwards;
+      }
+
+      footer {
+        animation: fadeIn 2s ease-out forwards;
+      }
     </style>
-  
+
   </head>
-  
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BarberPro - Início</title>
@@ -68,7 +131,7 @@
       top: 0;
       left: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
     }
 
     nav .logo {
@@ -106,6 +169,7 @@
       color: #fff;
       font-family: Arial, sans-serif;
     }
+
     video#video-bg {
       position: fixed;
       right: 0;
@@ -118,14 +182,16 @@
     }
 
     .container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Mudamos aqui */
-  align-items: center;
-  text-align: center;
-  padding-top: 100px; /* Adicionamos aqui */
-}
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      /* Mudamos aqui */
+      align-items: center;
+      text-align: center;
+      padding-top: 100px;
+      /* Adicionamos aqui */
+    }
 
 
     h1 {
@@ -170,51 +236,52 @@
       text-align: center;
       color: #888;
       font-size: 0.9rem;
-
-    
-
   </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">BarberPro</div>
-  <ul>
-    <li><a href="INICIO.html">Início</a></li>
-    <li><a href="AGENDAMENTO.html">Agendamento</a></li>
-    <li><a href="index.html">Barbeiros</a></li>
-    <li><a href="PRODUTOS.html">Produtos</a></li>
-    <li><a href="SERVIÇOS.html">Serviços</a></li>
-    <li><a href="PORTFÓLIO.html">Portfólio</a></li>
-    <li><a href="LOCALIZAÇÃO.html">Localização</a></li>
-    <li><a href="REGISTRAR.html">Login/Registrar</a></li>
-    <li><a href="https://wa.me/5511999999999" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
-    <li><a href="https://instagram.com/seuinstagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-  </ul>
-</nav>
+  <nav>
+    <div class="logo">BarberPro</div>
+    <ul>
+      <li><a href="site oficial.html">Início</a></li>
+      <li><a href="AGENDAMENTO.html">Agendamento</a></li>
+      <li><a href="index.html">Barbeiros</a></li>
+      <li><a href="PRODUTOS.html">Produtos</a></li>
+      <li><a href="SERVIÇOS.html">Serviços</a></li>
+      <li><a href="PORTFÓLIO.html">Portfólio</a></li>
+      <li><a href="LOCALIZAÇÃO.html">Localização</a></li>
+      <li><a href="REGISTRAR.html">Login/Registrar</a></li>
+      <li><a href="https://wa.me/5511999999999" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </li>
+      <li><a href="https://instagram.com/seuinstagram" target="_blank" title="Instagram"><i
+            class="fab fa-instagram"></i></a></li>
+    </ul>
+  </nav>
 
 
 
-<video autoplay muted loop id="video-bg">
+  <video autoplay muted loop id="video-bg">
     <source src="IMAGENS/2319-157183741_tiny.mp4" type="video/mp4">
     Seu navegador não suporta vídeos HTML5.
   </video>
-  
+
   <div class="container">
     <h1>BarberPro</h1>
     <h2>Estilo, Qualidade e Atendimento de Primeira</h2>
     <p>
-      Bem-vindo à BarberPro, onde cada corte é feito com excelência. Nosso compromisso é oferecer um ambiente moderno, profissionais experientes e os melhores estilos para realçar a sua personalidade.
+      Bem-vindo à BarberPro, onde cada corte é feito com excelência. Nosso compromisso é oferecer um ambiente moderno,
+      profissionais experientes e os melhores estilos para realçar a sua personalidade.
     </p>
     <a href="AGENDAMENTO.html">
       <button class="btn">Agendar Agora</button>
     </a>
   </div>
-  
+
   <footer>
     &copy; 2025 BarberPro - Todos os direitos reservados.
   </footer>
-  
-  </body>
-  </html>
+
+</body>
+
+</html>
