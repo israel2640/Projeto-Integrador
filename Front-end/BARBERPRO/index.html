@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BarberPro - Nossos Barbeiros</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Reset e estilos globais */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      min-height: 100vh;
+      padding-top: 80px;
+    }
+    
+    /* Navbar */
+    nav {
+      width: 100%;
+      background-color: #111;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    }
+    
+    nav .logo {
+      color: #FFA500;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    
+    nav ul li a:hover {
+      color: #FFA500;
+    }
+    
+    nav ul li a i {
+      font-size: 1.3rem;
+    }
+    
+    /* Conteúdo principal */
+    main {
+      padding: 20px;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      color: #FFA500;
+      margin-bottom: 40px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    /* Galeria de barbeiros */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .card {
+      position: relative;
+      width: 100%;
+      height: 400px; /* Altura aumentada */
+      overflow: hidden;
+      border-radius: 10px;
+      border: 2px solid #FFA500;
+      box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+      transition: all 0.4s ease;
+    }
+    
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(255, 165, 0, 0.5);
+    }
+    
+    .card:hover img {
+      transform: scale(1.05);
+    }
+    
+    .card figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .card h3 {
+      color: #FFA500;
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+    
+    a.card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      height: 100%;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .card {
+        height: 350px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+        padding: 10px;
+      }
+      
+      nav ul {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+      
+      .card {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">BarberPro</div>
+    <ul>
+      <li><a href="site oficial.html">Início</a></li>
+      <li><a href="AGENDAMENTO.html">Agendamento</a></li>
+      <li><a href="index.html">Barbeiros</a></li>
+      <li><a href="PRODUTOS.html">Produtos</a></li>
+      <li><a href="LOCALIZAÇÃO.html">Localização</a></li>
+      <li><a href="REGISTRAR.html" title="Login/Registrar"><i class="fas fa-user"></i></a></li>
+      <li><a href="https://wa.me/5511999999999" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+      
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Escolha seu barbeiro:</h1>
+
+    <div class="gallery">
+      <a href="AGENDAMENTO.html" class="card-link">
+        <article class="card">
+          <figure>
+            <img src="IMAGENS/PERFIL MULHER.jpg" alt="BARBEIRO CAMILA">
+            <figcaption>
+              <h3>BARBEIRO CAMILA</h3>
+              <p>Especialista em cortes clássicos</p>
+            </figcaption>
+          </figure>
+        </article>
+      </a>
+     
+      <a href="AGENDAMENTO.html" class="card-link">
+        <article class="card">
+          <figure>
+            <img src="IMAGENS/PERFIL HOMEM.jpg" alt="BARBEIRO NATTAN">
+            <figcaption>
+              <h3>BARBEIRO NATTAN</h3>
+              <p>Mestre em cortes modernos</p>
+            </figcaption>
+          </figure>
+        </article>
+      </a>
+    </div>
+  </main>
+</body>
+</html>

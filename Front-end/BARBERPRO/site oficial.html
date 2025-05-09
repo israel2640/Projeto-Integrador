@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BarberPro - Início</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    :root {
+      --orange: #FFA500;
+      --dark: #111;
+      --dark-gray: #222;
+      --light-gray: #ccc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--dark);
+      color: #fff;
+    }
+
+    /* Layout Original para Desktop */
+    nav {
+      width: 100%;
+      background-color: var(--dark);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    nav .logo {
+      color: var(--orange);
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--orange);
+    }
+
+    nav ul li a i {
+      font-size: 1.3rem;
+    }
+
+    .container {
+      padding-top: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    video#video-bg {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    .main-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: var(--orange);
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      color: var(--light-gray);
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--orange);
+      color: #000;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-bottom: 50px;
+    }
+
+    .btn:hover {
+      background-color: #e69500;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255,165,0,0.4);
+    }
+
+    /* Services Section - Desktop */
+    .services {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: var(--dark-gray);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+    }
+
+    .service {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #444;
+    }
+
+    .service:last-child {
+      border-bottom: none;
+    }
+
+    .service-name {
+      font-size: 20px;
+      color: var(--orange);
+    }
+
+    .service-description {
+      font-size: 14px;
+      color: var(--light-gray);
+      margin-top: 5px;
+    }
+
+    .service-price {
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    /* Portfolio Section - Desktop */
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+
+    .portfolio-item {
+      background-color: var(--dark-gray);
+      border: 2px solid var(--orange);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+      transition: transform 0.3s;
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 165, 0, 0.7);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Opening Hours */
+    .opening-hours {
+      max-width: 600px;
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    .opening-hours h2 {
+      color: var(--orange);
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .hours-list {
+      text-align: left;
+      display: inline-block;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .hours-list p {
+      margin: 10px 0;
+      text-align: left;
+    }
+
+    /* Mobile Menu Button (hidden on desktop) */
+    .menu-btn {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1100;
+      font-size: 1.5rem;
+      color: var(--orange);
+      cursor: pointer;
+    }
+
+    /* ========================================== */
+    /* RESPONSIVE DESIGN APENAS PARA TABLET/MOBILE */
+    /* ========================================== */
+
+    @media (max-width: 1024px) {
+      /* Tablet Styles */
+      .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .services {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Mobile Navigation */
+      nav {
+        display: none; /* Esconde a nav original */
+      }
+      
+      .menu-btn {
+        display: block; /* Mostra o botão do menu */
+      }
+      
+      .container {
+        padding-top: 20px;
+      }
+      
+      /* Sidebar Navigation */
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        background-color: var(--dark);
+        overflow-x: hidden;
+        transition: 0.5s;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+      }
+      
+      .sidebar.active {
+        width: 250px;
+      }
+      
+      .sidebar .logo {
+        padding: 20px;
+        text-align: center;
+        color: var(--orange);
+        font-size: 1.8rem;
+        font-weight: bold;
+        border-bottom: 1px solid #333;
+      }
+      
+      .sidebar nav ul {
+        list-style: none;
+        padding: 20px 0;
+      }
+      
+      .sidebar nav ul li a {
+        padding: 12px 20px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        color: #fff;
+        display: block;
+        transition: 0.3s;
+      }
+      
+      .sidebar nav ul li a:hover {
+        color: var(--orange);
+        background-color: #222;
+      }
+      
+      .sidebar nav ul li a i {
+        width: 30px;
+        text-align: center;
+      }
+      
+      /* Ajuste do conteúdo principal */
+      .main-content {
+        margin-left: 0;
+        transition: margin-left 0.5s;
+      }
+      
+      /* Services Section - Mobile */
+      .services {
+        padding: 20px;
+      }
+      
+      .service {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+      }
+      
+      .service-name {
+        margin-bottom: 5px;
+      }
+      
+      .service-price {
+        align-self: flex-end;
+        margin-top: 10px;
+      }
+      
+      /* Text Adjustments */
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Mobile Adjustments */
+      .portfolio {
+        grid-template-columns: 1fr;
+      }
+      
+      .btn {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+      }
+      
+      .menu-btn {
+        top: 15px;
+        left: 15px;
+      }
+      
+      .opening-hours h2 {
+        font-size: 1.5rem;
+      }
+      
+      .hours-list {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Mobile Menu Button (visível apenas em mobile/tablet) -->
+  <div class="menu-btn">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Sidebar Navigation (visível apenas em mobile/tablet) -->
+  <div class="sidebar">
+    <div class="logo">BarberPro</div>
+    <nav>
+      <ul>
+        <li><a href="site oficial.html"><i class="fas fa-home"></i> Início</a></li>
+        <li><a href="AGENDAMENTO.html"><i class="fas fa-calendar-alt"></i> Agendamento</a></li>
+        <li><a href="index.html"><i class="fas fa-cut"></i> Barbeiros</a></li>
+        <li><a href="PRODUTOS.html"><i class="fas fa-shopping-bag"></i> Produtos</a></li>
+        <li><a href="LOCALIZAÇÃO.html"><i class="fas fa-map-marker-alt"></i> Localização</a></li>
+        <li><a href="REGISTRAR.html"><i class="fas fa-user"></i> Login/Registrar</a></li>
+        <li><a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Desktop Navigation (visível apenas em desktop) -->
+  <nav>
+    <div class="logo">BarberPro</div>
+    <ul>
+      <li><a href="site oficial.html">Início</a></li>
+      <li><a href="AGENDAMENTO.html">Agendamento</a></li>
+      <li><a href="index.html">Barbeiros</a></li>
+      <li><a href="PRODUTOS.html">Produtos</a></li>
+      <li><a href="LOCALIZAÇÃO.html">Localização</a></li>
+      <li><a href="REGISTRAR.html" title="Login/Registrar"><i class="fas fa-user"></i></a></li>
+      <li><a href="https://wa.me/5511999999999" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <video autoplay muted loop id="video-bg">
+      <source src="IMAGENS/2319-157183741_tiny.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos HTML5.
+    </video>
+
+    <div class="main-content">
+      <h1>BarberPro</h1>
+      <h2>Estilo, Qualidade e Atendimento de Primeira</h2>
+      <p>
+        Bem-vindo à BarberPro, onde cada corte é feito com excelência. Nosso compromisso é oferecer um ambiente moderno,
+        profissionais experientes e os melhores estilos para realçar a sua personalidade.
+      </p>
+      <a href="AGENDAMENTO.html" class="btn">Agendar Agora</a>
+
+      <!-- Seção de Serviços -->
+      <h2>Nossos Serviços</h2>
+      <div class="services">
+        <div class="service">
+          <div>
+            <div class="service-name">Corte Clássico</div>
+            <div class="service-description">Corte tradicional com tesoura e máquina, incluindo lavagem, modelagem e finalização com produtos profissionais.</div>
+          </div>
+          <div class="service-price">R$ 45,00</div>
+        </div>
+
+        <div class="service">
+          <div>
+            <div class="service-name">Corte Navalha</div>
+            <div class="service-description">Técnica premium com acabamento em navalha para contornos perfeitos e linhas definidas.</div>
+          </div>
+          <div class="service-price">R$ 55,00</div>
+        </div>
+
+        <div class="service">
+          <div>
+            <div class="service-name">Degradê Premium</div>
+            <div class="service-description">Transição gradual impecável entre os fios, realizado por especialistas em cortes modernos.</div>
+          </div>
+          <div class="service-price">R$ 60,00</div>
+        </div>
+
+        <div class="service">
+          <div>
+            <div class="service-name">Desenho Artístico</div>
+            <div class="service-description">Criação personalizada de desenhos e padrões no cabelo com alta precisão artesanal.</div>
+          </div>
+          <div class="service-price">R$ 70,00</div>
+        </div>
+      </div>
+
+      <!-- Seção de Portfólio -->
+      <h2>Nosso Portfólio</h2>
+      <div class="portfolio">
+        <div class="portfolio-item">
+          <img src="IMAGENS/M1.jpg" alt="Corte 1">
+        </div>
+        <div class="portfolio-item">
+          <img src="IMAGENS/M2.jpg" alt="Corte 2">
+        </div>
+        <div class="portfolio-item">
+          <img src="IMAGENS/M3.jpg" alt="Corte 3">
+        </div>
+        <div class="portfolio-item">
+          <img src="IMAGENS/H1.jpg" alt="Corte 4">
+        </div>
+        <div class="portfolio-item">
+          <img src="IMAGENS/H2.jpg" alt="Corte 5">
+        </div>
+        <div class="portfolio-item">
+          <img src="IMAGENS/H3.jpg" alt="Corte 6">
+        </div>
+      </div>
+
+      <!-- Horário de Funcionamento -->
+      <div class="opening-hours">
+        <h2>⏰ HORÁRIO DE FUNCIONAMENTO ⏰</h2>
+        <div class="hours-list">
+          <p><strong>Segunda a Sexta:</strong> 09:00 - 12:00 | 14:00 - 19:00</p>
+          <p><strong>Sábado:</strong> 09:00 - 13:00</p>
+          <p><strong>Domingo:</strong> Fechado</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script>
+    // Menu Toggle apenas para mobile/tablet
+    if (window.innerWidth <= 768) {
+      document.querySelector('.menu-btn').addEventListener('click', function() {
+        document.querySelector('.sidebar').classList.toggle('active');
+      });
+      
+      // Close menu when clicking on a link
+      document.querySelectorAll('.sidebar nav ul li a').forEach(link => {
+        link.addEventListener('click', function() {
+          document.querySelector('.sidebar').classList.remove('active');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

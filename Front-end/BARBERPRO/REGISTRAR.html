@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login BarberPro</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #111;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    video#video-bg {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #FFA500;
+      margin-bottom: 10px;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .btn {
+      background-color: #FFA500;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .footer-text {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .footer-text a {
+      color: #FFA500;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Vídeo de fundo -->
+  <video autoplay muted loop id="video-bg">
+    <source src="IMAGENS/2319-157183741_tiny.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo HTML5.
+  </video>
+
+  <!-- Tela de Login -->
+  <div class="container" id="login-box">
+    <h2>Bem-vindo de volta</h2>
+    <p>Faça login para acessar sua conta</p>
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" placeholder="seu@email.com">
+    </div>
+    <div class="input-group">
+      <label>Senha</label>
+      <input type="password" placeholder="********">
+    </div>
+    <button class="btn">Entrar</button>
+    <div class="footer-text">
+      Não tem uma conta? <a onclick="showRegister()">Registre-se</a>
+    </div>
+  </div>
+
+  <!-- Tela de Registro -->
+  <div class="container hidden" id="register-box">
+    <h2>Criar conta</h2>
+    <p>Preencha os dados para se registrar</p>
+    <div class="input-group">
+      <label>Nome</label>
+      <input type="text" placeholder="Seu nome">
+    </div>
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" placeholder="seu@email.com">
+    </div>
+    <div class="input-group">
+      <label>Senha</label>
+      <input type="password" placeholder="Crie uma senha">
+    </div>
+    <button class="btn">Registrar</button>
+    <div class="footer-text">
+      Já tem uma conta? <a onclick="showLogin()">Fazer login</a>
+    </div>
+  </div>
+
+  <script>
+    function showRegister() {
+      document.getElementById('login-box').classList.add('hidden');
+      document.getElementById('register-box').classList.remove('hidden');
+    }
+
+    function showLogin() {
+      document.getElementById('register-box').classList.add('hidden');
+      document.getElementById('login-box').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login BarberPro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    nav {
+      width: 100%;
+      background-color: #111;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    nav .logo {
+      color: #FFA500;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #FFA500;
+    }
+
+    nav ul li a i {
+      font-size: 1.3rem;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 80px;
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* ... outros estilos ... */
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">BarberPro</div>
+    <ul>
+      <li><a href="site oficial.html">Início</a></li>
+      <li><a href="AGENDAMENTO.html">Agendamento</a></li>
+      <li><a href="index.html">Barbeiros</a></li>
+      <li><a href="PRODUTOS.html">Produtos</a></li>
+      <li><a href="LOCALIZAÇÃO.html">Localização</a></li>
+      <li><a href="REGISTRAR.html" title="Login/Registrar"><i class="fas fa-user"></i></a></li>
+      <li><a href="https://wa.me/5511999999999" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+      
+    </ul>
+  </nav>
+
+  <!-- ... conteúdo do login/registro ... -->
+</body>
+</html>

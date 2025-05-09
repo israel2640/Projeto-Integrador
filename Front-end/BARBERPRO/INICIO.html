@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BarberPro - Início</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      background-color: #111;
+      color: #fff;
+      position: relative;
+    }
+
+    video#video-bg {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #FFA500;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    p {
+      max-width: 600px;
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      background-color: #FFA500;
+      color: #000;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #e69500;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Vídeo de fundo -->
+  <video autoplay muted loop id="video-bg">
+    <source src="IMAGENS/2319-157183741_tiny.mp4" type="video/mp4">
+    Seu navegador não suporta vídeos HTML5.
+  </video>
+
+  <div class="container">
+    <h1>BarberPro</h1>
+    <h2>Estilo, Qualidade e Atendimento de Primeira</h2>
+    <p>
+      Bem-vindo à BarberPro, onde cada corte é feito com excelência. Nosso compromisso é oferecer um ambiente moderno, profissionais experientes e os melhores estilos para realçar a sua personalidade. Agende agora mesmo seu horário!
+    </p>
+    <a href="agendamento.html">
+      <button class="btn">Agendar Agora</button>
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2025 BarberPro - Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
