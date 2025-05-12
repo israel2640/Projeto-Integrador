@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produtos - Estilo BarberPro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    nav {
+      width: 100%;
+      background-color: #111;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    nav .logo {
+      color: #FFA500;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #FFA500;
+    }
+
+    nav ul li a i {
+      font-size: 1.3rem;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 80px;
+      background-color: #111;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #FFA500;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .product-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .product-card {
+      background: #1a1a1a;
+      border-radius: 15px;
+      overflow: hidden;
+      width: 300px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px px rgba(255, 165, 0, 0.1);
+      border: 1px solid #333;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(255, 165, 0, 0.3);
+      border-color: #FFA500;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-bottom: 1px solid #333;
+    }
+
+    .product-info {
+      padding: 5px;
+    }
+
+    .product-title {
+      font-size: 1.3rem;
+      margin: 0 0 10px;
+      color: #FFA500;
+    }
+
+    .product-description {
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .product-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    .btn-primary {
+      background-color: #FFA500;
+      color: #111;
+      flex-grow: 1;
+      margin-right: 10px;
+    }
+
+    .btn-primary:hover {
+      background-color: #ff8c00;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #FFA500;
+      border: 1px solid #FFA500;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 165, 0, 0.1);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #FFA500;
+      color: #111;
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+
+    .product-card {
+      position: relative;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .product-card {
+      animation: fadeIn 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    .product-card:nth-child(1) { animation-delay: 0.1s; }
+    .product-card:nth-child(2) { animation-delay: 0.2s; }
+    .product-card:nth-child(3) { animation-delay: 0.3s; }
+    .product-card:nth-child(4) { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">BarberPro</div>
+    <ul>
+      <li><a href="site oficial.html">Início</a></li>
+      <li><a href="AGENDAMENTO.html">Agendamento</a></li>
+      <li><a href="index.html">Barbeiros</a></li>
+      <li><a href="PRODUTOS.html">Produtos</a></li>
+      <li><a href="LOCALIZAÇÃO.html">Localização</a></li>
+      <li><a href="REGISTRAR.html" title="Login/Registrar"><i class="fas fa-user"></i></a></li>
+      <li><a href="https://wa.me/5511999999999" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+      <li><a href="https://instagram.com/seuinstagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Nossos Produtos</h1>
+    
+    <div class="product-gallery">
+      <div class="product-card">
+        <span class="product-badge">Mais Vendido</span>
+        <img src="IMAGENS/produto 1.png" alt="Pomada BarberPro" class="product-image">
+        <div class="product-info">
+          <h3 class="product-title">Pomada BarberPro</h3>
+          <p class="product-description">Pomada de alta fixação com brilho natural. Ideal para penteados clássicos e modernos. Fragrância amadeirada.</p>
+          <div class="product-price">R$ 129,90</div>
+          <div class="product-actions">
+            <button class="btn btn-primary">Comprar</button>
+            <button class="btn btn-secondary">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="IMAGENS/produto 2.png" alt="Óleo para Barba" class="product-image">
+        <div class="product-info">
+          <h3 class="product-title">Óleo para Barba</h3>
+          <p class="product-description">Hidrata e nutre os pelos faciais. Com óleo de argan e jojoba, proporciona maciez e brilho saudável.</p>
+          <div class="product-price">R$ 59,90</div>
+          <div class="product-actions">
+            <button class="btn btn-primary">Comprar</button>
+            <button class="btn btn-secondary">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <span class="product-badge">Novidade</span>
+        <img src="IMAGENS/produto 3" alt="Kit Barber Complete" class="product-image">
+        <div class="product-info">
+          <h3 class="product-title">Kit Barber Complete</h3>
+          <p class="product-description">Kit completo com pomada, óleo para barba, shampoo e pente. Tudo que você precisa para cuidados diários.</p>
+          <div class="product-price">R$ 49,90</div>
+          <div class="product-actions">
+            <button class="btn btn-primary">Comprar</button>
+            <button class="btn btn-secondary">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+
+</body>
+</html>
